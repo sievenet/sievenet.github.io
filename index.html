@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="SieveNet project page.">
+  <meta name="keywords" content="SieveNet, backbone, 3D model">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SieveNet: Selecting Point-Based Features for Mesh Networks</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://github.com/nagisa-eevee">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">SieveNet: Selecting Point-Based Features for Mesh Networks</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://github.com/nagisa-eevee">Shengchao Yuan</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="">Yishun Dou</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="">Rui Shi</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="">Bingbing Ni</a><sup>1,2</sup>
+              </span>
+              <span class="author-block">
+                <a href="">Zhong Zheng</a><sup>2</sup>,
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Shanghai Jiao Tong University,</span>
+              <span class="author-block"><sup>2</sup>Huawei</span>
+            </div>
+
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="./assets/dummy_SieveNet_CameraReady.pdf"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="./assets/dummy_SieveNet_Arxiv.pdf" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>ArXiv</span>
+                  </a>
+                </span>
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://drive.google.com/file/d/dummy_dataset"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-images"></i>
+                    </span>
+                    <span>Dataset</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/nagisa-eevee/sievenet"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="my-hr">
+    <hr>
+  </div>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <!-- <h2 class="title is-3">Segmentation Results on HumanBody</h2> -->
+        <img src="./static/assets/seg_result.png", style="width: 100%;">
+        <div class="content has-text-justified">
+        </div>
+      </div>
+    </div>
+
+      <hr>
+
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Meshes are widely used in 3D computer vision and graphics, but their irregular topology poses challenges
+              in applying them to existing neural network architectures. Recent advances in mesh neural networks turn to
+              remeshing and push the boundary of pioneer methods that solely take the raw meshes as input. Although the
+              remeshing offers a regular topology that significantly facilitates the design of mesh network
+              architectures, features extracted from such remeshed proxies may struggle to retain the underlying
+              geometry faithfully, limiting the subsequent neural network's capacity.
+            </p>
+            <p>
+              To address this issue, we propose SieveNet, a novel paradigm that takes into account both the regular
+              topology and the exact geometry. Specifically, this method utilizes structured mesh topology from
+              remeshing and accurate geometric information from distortion-aware point sampling on the surface of the
+              original mesh. Furthermore, our method eliminates the need for hand-crafted feature engineering and can
+              leverage off-the-shelf network architectures such as the vision transformer.
+            </p>
+            <p>
+              Comprehensive experimental results on classification and segmentation tasks well demonstrate the
+              effectiveness and superiority of our method.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+      <hr>
+
+      <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">The good properties of FocalDreamer</h2>
+        <div class="content has-text-justified">
+          <p>
+            SEPARABLE: Given a base shape, FocalDreamer produces structurally separate parts facilitating instance reuse and part-wise post-processing, grounded in widespread understanding.
+          </p>
+          <p>
+            PRECISE: FocalDreamer also provides fine-grained and local editing, enabling precise control in the desired area, while maintaining other regions untouched.
+          </p>
+          <p>
+            CONSISTENT: After the editing process, the resultant shape respects the characteristics of the source shape in harmonious appearance, while visually adhering to the text specifications.
+          <p>
+        </div> 
+        <img width=60% src="./static/my_gif/motivation.png">
+        <div class="content has-text-justified">
+          <p>
+            Given the prompt "a butterfly over a tree stump", our method delivers high-fidelity geometry and photorealistic appearance using PBR materials. 
+            Lines (b-c) showcase instance reuse and part-wise material control, underscoring FocalDreamer's capability for separable and precise edits.
+          </p>
+        </div> 
+      </div>
+    </div> -->
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Benefit of SieveNet</h2>
+          <img src="./static/assets/relatedMethods.png", style="width: 80%;">
+          <div class="content has-text-justified">
+            <p>
+              <b>Geometry perservation.</b> SieveNet effectively preserves intricate geometric details by capturing precise point-based features directly from the original mesh. This stands in contrast to approaches employing remeshing techniques (mentioned in row 4), which heavily rely on proxies that can introduce geometric inaccuracies.
+            </p>
+            <p>
+              <b>Topology regularity.</b> In parallel with remeshing strategies, our approach prioritizes maintaining a regular mesh topology. However, methods that directly utilize raw mesh inputs (described in rows 1-3) encounter challenges posed by the inherent irregularities within such meshes, thereby impeding their performance in capturing consistent topology information.
+            </p>
+            <p>
+              <b>Elimination of hand-crafted features.</b> SieveNet's innovation lies in its utilization of point-based features characterized solely by positional and normal attributes. This eliminates the necessity of hand-crafted features from faces, half-edges, etc.
+            </p>
+            <p>
+              In conclusion, SieveNet contributes to the advancement of 3D mesh networks vision by preserving geometry, enhancing topology regularity, and eliminating the demand for hand-crafted features.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Pipeline</h2>
+          <img src="./static/assets/pipeline.png", style="width: 80%;">
+          <div class="content has-text-justified">
+            <p>
+              <b>Illustration of our pipeline.</b> Our method takes into account both the regular topology and precise raw
+              geometry.
+            </p>
+            <p>
+              <b>Stage 1: Topology extraction.</b> Given a triangle mesh, simplification and subdivision are conducted to extract a regular and
+              fine-grained topology. In the meantime, a point-level bijection is established, as shown in the following figure.
+            </p>
+          </div>
+
+            <img src="./static/assets/bijection.png", style="width: 80%;">
+
+
+          <div class="content has-text-justified"> 
+            <p>
+              <b>Stage 2: Point-based feature construction.</b> We start with stratified sampling candidate points on the subdivided mesh \(\mathcal{M}\), 
+              followed by a distortion-aware selection such that the selected points 
+              seem <i>uniformly</i> sampled from the original mesh \(\mathcal{M}^L\) within each topology unit. 
+              The positions and normals of selected points are packed together to represent a 
+              topology unit, which is then further packed and flattened to form a patch representation. 
+              With an off-the-shelf vision transformer, our method can achieve state-of-the-art results.
+            </p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Results</h2>
+          <div>
+            <object data="./static/assets/table_seg.svg" type="image/svg+xml">Segmentation.</object>
+          </div>
+          <p class="content has-text-justified">
+            Table 1: <b>Segmentation results on the HumanBody dataset</b> (Maron et al. 2017). The \(\dagger\) rows are evaluations on the original meshes, and the \(\ddagger\) rows are evaluations on the processed inputs. SieveNet surpasses the previous methods on both evaluations.
+          </p>
+          <div>
+            <object data="./static/assets/table_cls.svg" type="image/svg+xml">Classification.</object>
+          </div>
+          <p class="content has-text-justified">
+            Table 2: <b>Classification results on Manifold40</b> (Hu et al.2022a). The first two methods take point clouds as input. Other methods are mesh-based methods. SieveNet has better performance than those point cloud-based and remesh-based methods.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <div class="my-hr">
+    <hr>
+  </div>
+
+  <!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+
+      </code></pre>
+  </div>
+</section> -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <!-- <div class="column is-8"> -->
+        <div class="content">
+          <p>
+            This website is constructed using the source code provided by <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> and <a
+              href="https://fantasia3d.github.io/">Fantasia3D</a>,
+            allow us to express our appreciation for their contribution.
+          </p>
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
